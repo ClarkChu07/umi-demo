@@ -3,6 +3,10 @@ import { defineConfig } from '@umijs/max';
 export default defineConfig({
   antd: {},
   access: {},
+  request: {
+    dataField: 'data', // 配置请求响应时通过data消费数据
+  },
+  layout: {},
   model: {},
   initialState: {},
   codeSplitting: { // 代码拆分策略
@@ -39,10 +43,6 @@ export default defineConfig({
       'pathRewrite': { '^/api' : '' },
     }
   },
-  request: {},
-  layout: {
-    title: 'Umi Demo',
-  },
   routes: [
     {
       path: '/',
@@ -62,6 +62,21 @@ export default defineConfig({
       name: ' CRUD 示例',
       path: '/table',
       component: './Table',
+    },
+    {
+      name: ' 业务',
+      path: '/business',
+      component: './Business/Business1',
+    },
+    {
+      name: ' 业务1',
+      path: '/business/business1',
+      component: './Business/Business1',
+    },
+    {
+      name: ' 业务2',
+      path: '/business/business2',
+      component: './Business/Business2',
     },
   ],
   npmClient: 'pnpm',
